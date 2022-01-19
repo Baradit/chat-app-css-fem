@@ -1,0 +1,299 @@
+:root {
+    --pale-violet: hsl(276, 100%, 81%);
+    --moderate-violet: hsl(276, 55%, 52%);
+    --desaturated-darkv: hsl(271, 15%, 43%);
+    --grayish-blue: hsl(206, 6%, 79%);
+    --very-dark-desaturated: hsl(271, 36%, 24%);
+    --dark-grayish-violet: hsl(270, 7%, 64%);
+
+    --light-magenta: hsl(293, 100%, 63%);
+    --light-violet: hsl(264, 100%, 61%); 
+
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 20%, 96%);
+    --very-light-magenta: hsl(289, 100%, 72%);
+
+}
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    position: relative;
+    background: var(--white);
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin-inline: auto;
+}
+
+.bg-color.mobile {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 50%;
+    height: 600px;
+    background: linear-gradient(
+        hsl(293, 100%, 63%), 
+        hsl(264, 100%, 61%));
+    border-radius: 0 0 200px 0px;
+    z-index: 10;
+}
+
+.main {
+    position: relative;
+    z-index: 99;
+}
+
+.app-chat {
+    max-width: 300px;
+    margin-inline: auto;
+    padding: 30px 0 0 0;
+}
+
+.app-chat .mobile {
+    width: 100%;
+    border: 8px solid var(--white);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 0 20px 20px rgba(53, 53, 53, 0.3);
+}
+
+.mobile-header {
+    background: linear-gradient(
+        to left,
+        hsl(293, 100%, 63%), 
+        hsl(264, 100%, 61%)
+    );
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 10px 10px;
+    align-items: center;
+    color: var(--white);
+    position: relative;
+}
+
+.mobile-header::before {
+    content: '';
+    position:absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-inline: auto;
+    width: 60%;
+    height: 20px;
+    background: var(--white);
+    border-radius: 0 0 50px 50px;
+}
+
+
+
+.mobile-header__info-name {
+    font-weight: 500;
+}
+
+.mobile-header__info-available {
+    font-weight: 400;
+    font-size: 0.625rem;
+    color: var(--pale-violet);
+}
+
+.mobile-header__info,
+.mobile-header__icon-return,
+.mobile-header__menu {
+    font-size: 14px;
+}
+
+.mobile-header__avatar {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: block;
+    border: 1px solid var(--white);
+    background-image: url(/images/avatar.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.chat {
+    padding: 20px 15px 15px;
+    background-color: var(--light-grayish-violet);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-left {
+    color: var(--moderate-violet);
+    background-color: hsl(276, 55%, 92%);
+    padding: 10px;
+    border-radius: 15px;
+    align-self: flex-start;
+    border-radius: 15px 15px 15px 3px;
+}
+
+.chat-right {
+    background-color: var(--white);
+    color: var(--desaturated-darkv);
+    padding: 10px;
+    align-self: flex-end;
+    border-radius: 15px 15px 3px 15px;
+}
+
+.chat-left,
+.chat-right {
+    max-width: 160px;
+    display: inline-block;
+    margin: 0 0 10px 0;
+    font-size: 0.625rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.dogs-pictures {
+    background-color: inherit;
+    padding: 0;
+    margin-top: 9px;
+    box-shadow: none;
+}
+
+.dogs-pictures img {
+    width: 45px;
+    height: 45px;
+    border-radius: 15px;
+}
+
+.dogs-pictures img:not(:last-child) {
+    margin-right: 5px;
+}
+
+
+.chat-payment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(
+        to right,
+        hsl(293, 100%, 63%), 
+        hsl(264, 100%, 61%)
+    );
+    border-radius: 15px 15px 15px 3px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 10px 20px 10px 10px;
+    max-width: 200px;
+    width: 100%;
+    color: var(--white);
+}
+
+.chat-payment:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.chat-payment__time {
+    color: var(--white);
+    font-size: 0.625rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-payment__price {
+    font-weight: 500;
+}
+
+.chat-send-message__form{
+    width: 100%;
+    position: relative;
+}
+
+.chat-send-message__form input {
+    width: 100%;
+    border: 0;
+    outline: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 35px;
+    border-radius: 15px;
+    position: relative;
+    padding: 15px;
+    display: block;
+}
+
+.chat-send-message__form .icon-send {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: var(--very-dark-desaturated);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.chat-send-message__form input::placeholder {
+    font-size: 0.625rem;
+    color: var(--grayish-blue);
+}
+
+
+.app-text {
+    max-width: 320px;
+    margin: 70px auto 0 auto;
+    text-align: center;
+}
+
+.app-text h1 {
+    color: var(--very-dark-desaturated);
+    font-size: 2.3rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.app-text p {
+    color: var(--dark-grayish-violet);
+    line-height: 1.7;
+}
+
+
+.attribution {
+    margin-top: 4rem;
+    padding: 10px;
+    color: var(--white);
+    background: #2a2a2a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
