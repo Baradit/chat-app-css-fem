@@ -32,23 +32,36 @@ body {
     font-weight: 400;
     position: relative;
     background: var(--white);
-}
-
-.wrapper {
     max-width: 1440px;
     margin-inline: auto;
 }
 
-.bg-color.mobile {
+.wrapper {
+    margin-inline: auto;
+    padding-top: 2rem;
+}
+
+.bg-color-left.mobile {
     position: absolute;
     top: 0%;
     left: 0;
     width: 50%;
-    height: 600px;
+    height: 570px;
     background: linear-gradient(
         hsl(293, 100%, 63%), 
         hsl(264, 100%, 61%));
     border-radius: 0 0 200px 0px;
+    z-index: 10;
+}
+
+.bg-color-right.mobile {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 500px;
+    background: var(--light-grayish-violet);
+    border-radius: 200px 0 0 0;
     z-index: 10;
 }
 
@@ -93,7 +106,7 @@ body {
     right: 0;
     left: 0;
     margin-inline: auto;
-    width: 60%;
+    width: 55%;
     height: 20px;
     background: var(--white);
     border-radius: 0 0 50px 50px;
@@ -277,9 +290,76 @@ body {
     padding: 10px;
     color: var(--white);
     background: #2a2a2a;
+    z-index: 99;
+    position: relative;
 }
 
+/* Responsive web design */
 
+@media screen and (min-width: 768px) {
+    
+}
+@media screen and (min-width: 992px) {
+    .bg-color-left.mobile,
+    .bg-color-right.mobile {
+        width: 35%;
+    }
+    
+    .main .wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .app-chat {
+        width: 600px;
+    }
+
+    .app-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-left: 0;
+    }
+
+    
+}
+@media screen and (min-width: 1200px) {
+    .bg-color-left.mobile {
+        width: 29%;
+        height: 700px;
+        border-radius: 0 0 200px 200px;
+    }
+
+    .bg-color-right.mobile {
+        width: 24%;
+        height: 800px;
+    }
+
+    .main .wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 8rem;
+        padding: 7rem 0;
+    }
+
+    .app-chat, .app-text {
+        padding: 0; 
+        margin: 0;
+    }
+
+    .app-text {
+        display: flex;
+        align-items: start;
+        width: 100%;
+        max-width: 450px;
+        text-align: left !important;
+    }
+
+    
+
+}
 
 
 
